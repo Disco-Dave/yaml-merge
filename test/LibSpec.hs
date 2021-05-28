@@ -4,7 +4,7 @@ module LibSpec where
 
 import Data.Aeson.QQ.Simple (aesonQQ)
 import Lib (merge, mergeMany)
-import Test.Hspec
+import Test.Hspec (Spec, describe, it, shouldBe)
 
 spec :: Spec
 spec = do
