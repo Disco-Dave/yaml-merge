@@ -9,6 +9,7 @@ import qualified Data.ByteString as ByteString
 import qualified Data.HashMap.Lazy as HashMap
 import qualified Data.Yaml as Yaml
 import System.Environment (getArgs)
+import Data.Foldable (foldl')
 
 merge :: Value -> Value -> Value
 merge valueA valueB =
@@ -18,7 +19,7 @@ merge valueA valueB =
     _ -> valueA
 
 mergeMany :: Foldable f => f Value -> Value
-mergeMany = foldr merge $ Object HashMap.empty
+mergeMany = foldl' merge $ Object HashMap.empty
 
 combineFiles :: IO ()
 combineFiles =
