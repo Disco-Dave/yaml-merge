@@ -13,7 +13,7 @@ stack install
 ```
 
 ## Motivation and example
-The following is a snippet from dotfiles. I built this program to have host specific settings for alacritty.
+The following is a snippet from my dotfiles. It's a script to overlay host specific settings over a base configuration file for alacritty. The script is then called at start via `xinitrc`.
 ```bash
 #!/bin/bash
 
