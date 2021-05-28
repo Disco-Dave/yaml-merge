@@ -1,0 +1,75 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.34.4.
+--
+-- see: https://github.com/sol/hpack
+
+name:           yaml-merge
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/githubuser/yaml-merge#readme>
+homepage:       https://github.com/disco-dave/yaml-merge#readme
+bug-reports:    https://github.com/disco-dave/yaml-merge/issues
+author:         David Burkett
+maintainer:     example@example.com
+copyright:      2021 David Burkett
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+    ChangeLog.md
+
+source-repository head
+  type: git
+  location: https://github.com/disco-dave/yaml-merge
+
+library
+  exposed-modules:
+      Lib
+  other-modules:
+      Paths_yaml_merge
+  hs-source-dirs:
+      src
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wpartial-fields -Wredundant-constraints
+  build-depends:
+      aeson
+    , base >=4.7 && <5
+    , bytestring
+    , unordered-containers
+    , yaml
+  default-language: Haskell2010
+
+executable yaml-merge
+  main-is: Main.hs
+  other-modules:
+      Paths_yaml_merge
+  hs-source-dirs:
+      app
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wpartial-fields -Wredundant-constraints -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      aeson
+    , base >=4.7 && <5
+    , bytestring
+    , unordered-containers
+    , yaml
+    , yaml-merge
+  default-language: Haskell2010
+
+test-suite yaml-merge-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      LibSpec
+      Paths_yaml_merge
+  hs-source-dirs:
+      test
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wpartial-fields -Wredundant-constraints -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      aeson
+    , base >=4.7 && <5
+    , bytestring
+    , hspec
+    , unordered-containers
+    , yaml
+    , yaml-merge
+  default-language: Haskell2010
